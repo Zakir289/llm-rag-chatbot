@@ -89,12 +89,14 @@ npm run dev
 2. Type a message in the chat
 
 
-##sequence
-User ->> React UI: Enters question
-React UI ->> Express API: POST /api/chat
-Express API ->> Retriever: POST /retrieve
-Retriever ->> Express API: return relevant context
-Express API ->> Ollama (http://localhost:11434/api/generate): POST prompt + context
-Ollama ->> Express API: LLM-generated reply
-Express API ->> React UI: Send reply
+```mermaid
+sequenceDiagram
+    User->>React UI: Enters question
+    React UI->>Express API: POST /api/chat
+    Express API->>Retriever: POST /retrieve
+    Retriever->>Express API: Return relevant context
+    Express API->>Ollama: POST prompt + context (http://localhost:11434/api/generate)
+    Ollama->>Express API: LLM-generated reply
+    Express API->>React UI: Send reply
+```
 
