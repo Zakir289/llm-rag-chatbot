@@ -97,3 +97,4 @@ Retriever ->> Express API: return relevant context
 Express API ->> Ollama (http://localhost:11434/api/generate): POST prompt + context
 Ollama ->> Express API: LLM-generated reply
 Express API ->> React UI: Send reply
+
